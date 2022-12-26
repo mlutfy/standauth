@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<menu>
+  <item>
+    <path>civicrm/login</path>
+    <page_callback>CRM_Standauth_Form_Login</page_callback>
+    <title>Login</title>
+    <access_callback>1</access_callback>
+  </item>
+</menu>
