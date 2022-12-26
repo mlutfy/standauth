@@ -29,6 +29,12 @@ class LocalCiviDatabase implements AuthenticationProviderInterface {
       // @todo obviously these wouldn't be stored in plain text
       if ($password === $user->password) {
         $uid = $user->id;
+
+        $ufmatch = new \CRM_Core_DAO_UFMatch();
+        $ufmatch->uf_id = $uid;
+        if ($ufmatch->find(TRUE)) {
+          \CRM_Core_Session::singleton()->set('userID', $ufmatch->contact_id);
+        }
       }
     }
     return $uid;
