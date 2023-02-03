@@ -24,7 +24,7 @@ class LoginService implements LoginServiceInterface {
    */
   public function authenticate(string $username, string $password): int {
     $uid = 0;
-    $user = new \CRM_Standalone_DAO_User();
+    $user = new \CRM_Standaloneusers_DAO_User();
     $user->username = $username;
     if ($user->find(TRUE)) {
       // @todo something like $auth_provider = AuthenticationProviderFactory::create($user->auth_provider)

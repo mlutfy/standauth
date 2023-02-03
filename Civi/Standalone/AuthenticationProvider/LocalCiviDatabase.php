@@ -23,7 +23,7 @@ class LocalCiviDatabase implements AuthenticationProviderInterface {
    */
   public function authenticate(string $username, string $password): int {
     $uid = 0;
-    $user = new \CRM_Standalone_DAO_User();
+    $user = new \CRM_Standaloneusers_DAO_User();
     $user->username = $username;
     if ($user->find(TRUE)) {
       // @todo obviously these wouldn't be stored in plain text
